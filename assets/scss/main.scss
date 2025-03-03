@@ -1,0 +1,66 @@
+@use "mixins" as *;
+@use "root";
+
+:root {
+    color-scheme: light !important;
+}
+
+body::-webkit-scrollbar {
+    background: #deeeff;
+    width: 10px;
+    line-height: 1.6;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-color-hover);
+}
+
+img,
+button {
+    user-select: none;
+}
+
+body {
+    font-family: var(--system-font);
+    background: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 0 16px;
+    margin: 0 auto;
+
+    @include breakpoint(sm) {
+        padding: 0;
+        max-width: 540px;
+    }
+
+    @include breakpoint(md) {
+        padding: 0;
+        max-width: 720px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 0;
+        max-width: 960px;
+    }
+
+    @include breakpoint(xl) {
+        padding: 0;
+        max-width: 1140px;
+    }
+
+    @include breakpoint(xxl) {
+        padding: 0;
+        max-width: 1320px;
+    }
+}

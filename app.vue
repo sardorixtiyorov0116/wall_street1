@@ -1,6 +1,18 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <Header />
+    <HeroSection />
+    <HistorySection />
+    <TeamSection />
+    <ClientSection />
+    <ServiceSection />
+    <Portfolio />
+    <Blog />
+    <Contacts />
+    <FaqSection />
   </div>
 </template>
