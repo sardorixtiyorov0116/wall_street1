@@ -31,7 +31,7 @@
 </script>
 
 <style scoped lang="scss">
-@import "../../assets/scss/_mixins.scss";
+@use "~/assets/scss/mixins" as *;
 
 .team {
     padding: 60px 0;

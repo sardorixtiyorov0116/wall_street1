@@ -63,7 +63,7 @@ import { IconFacebook, IconInstagram, IconLinkedin } from '~/assets/icons';
 </script>
 
 <style scoped lang="scss">
-@import "~/assets/scss/_mixins.scss";
+@use "~/assets/scss/mixins" as *;
 
 .contacts {
     padding: 60px 0;

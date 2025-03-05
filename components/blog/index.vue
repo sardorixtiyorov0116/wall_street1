@@ -36,7 +36,7 @@ const blogs = [
 </script>
 
 <style scoped lang="scss">
-@import "~/assets/scss/_mixins.scss";
+@use "~/assets/scss/mixins" as *;
 
 .blog {
     padding: 60px 0;
@@ -101,7 +101,8 @@ const blogs = [
                 padding: .3rem .6rem;
                 transition: all 0.2s ease-in-out;
                 margin-top: auto;
-                max-width: 120px;
+                text-align: center;
+                max-width: 130px;
 
                 &:hover {
                     background: #5c636a;

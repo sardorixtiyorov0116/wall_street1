@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div class="container">
-            <h2>Horizon Consult</h2>
+            <h2>Horizont Consult</h2>
             <p>Эксперты в финансовом консалтинге, инвестиционных и бухгалтерских услугах.</p>
             <button>Заказать звонок</button>
         </div>
