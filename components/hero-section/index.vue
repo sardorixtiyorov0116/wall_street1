@@ -1,15 +1,15 @@
 <template>
     <div class="hero">
         <div class="container">
-            <h2>Horizont Consult</h2>
-            <p>Эксперты в финансовом консалтинге, инвестиционных и бухгалтерских услугах.</p>
+            <h2>{{ title }}</h2>
+            <p>{{ description }}</p>
             <button>Заказать звонок</button>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-
+defineProps<{ title: string, description: string }>()
 </script>
 
 <style scoped lang="scss">

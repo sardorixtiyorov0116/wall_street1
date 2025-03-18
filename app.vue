@@ -1,18 +1,10 @@
-<script setup lang="ts">
-
+<script setup>
 </script>
 
 <template>
-  <div>
+  <NuxtLayout>
     <Header />
-    <HeroSection />
-    <HistorySection />
-    <TeamSection />
-    <ClientSection />
-    <ServiceSection />
-    <Portfolio />
-    <Blog />
-    <Contacts />
-    <FaqSection />
-  </div>
+    <NuxtPage />
+    <Footer />
+  </NuxtLayout>
 </template>

@@ -1,29 +1,42 @@
 <template>
     <div class="header" ref="headerRef">
         <div class="container navbar">
-            <div class="logo">
+            <NuxtLink to="/" class="logo">
                 <img src="../../assets/images/Horizont_Consult_resized_logo.png" alt="">
-                <!-- Horizon Consult -->
-            </div>
+            </NuxtLink>
             <div class="navbar-nav">
-                <UDropdown :items="items1" mode="hover" :popper="{ placement: 'bottom-start' }">
+                <UDropdown v-if="route.path === '/about'" :items="items1" mode="hover"
+                    :popper="{ placement: 'bottom-start' }">
                     <p href="#" class="navbar-nav-link"> О компании
                         <IconDown />
                     </p>
                 </UDropdown>
-                <UDropdown :items="items2" mode="hover" :popper="{ placement: 'bottom-start' }">
+                <NuxtLink v-else to="/about" class="navbar-nav-link">
+                    О компании
+                    <IconDown />
+                </NuxtLink>
+                <UDropdown v-if="route.path === '/services'" :items="items2" mode="hover"
+                    :popper="{ placement: 'bottom-start' }">
                     <p href="#" class="navbar-nav-link">Услуги
                         <IconDown />
                     </p>
                 </UDropdown>
-                <UDropdown :items="items3" mode="hover" :popper="{ placement: 'bottom-start' }">
-                    <p href="#" class="navbar-nav-link">Портфолио
-                        <IconDown />
-                    </p>
-                </UDropdown>
-                <a href="#contacts" class="navbar-nav-link">Контакты</a>
-                <a href="#blog" class="navbar-nav-link">Блог</a>
-                <a href="#faq" class="navbar-nav-link">FAQ</a>
+                <NuxtLink v-else to="/services" class="navbar-nav-link">
+                    Услуги
+                    <IconDown />
+                </NuxtLink>
+                <NuxtLink to="/portfolio" class="navbar-nav-link">
+                    Портфолио
+                </NuxtLink>
+                <NuxtLink to="/contacts" class="navbar-nav-link">
+                    Контакты
+                </NuxtLink>
+                <NuxtLink to="/blog" class="navbar-nav-link">
+                    Блог
+                </NuxtLink>
+                <NuxtLink to="/faq" class="navbar-nav-link">
+                    FAQ
+                </NuxtLink>
             </div>
             <div class="navbar-menu">
                 <button class="navbar-menu-btn" @click="isOpen = !isOpen">
@@ -34,7 +47,7 @@
         <transition name="slide-down">
             <div v-if="isOpen" class="container bottom-header">
                 <div class="accardions">
-                    <UAccordion :items="accordions" :ui="{ wrapper: 'flex flex-col w-auto' }">
+                    <!-- <UAccordion :items="accordions" :ui="{ wrapper: 'flex flex-col w-auto' }">
                         <template #default="{ item, index, open }">
                             <UButton color="gray" variant="ghost" class="hover:!bg-inherit w-auto"
                                 :ui="{ rounded: 'rounded-none', padding: { sm: 'p-3' } }">
@@ -44,9 +57,9 @@
                                         class="w-5 h-5 ms-auto transform transition-transform duration-200 -rotate-90"
                                         :class="[open && 'rotate-0']" />
                                 </template>
-                            </UButton>
-                        </template>
-                        <template #item="{ item }">
+</UButton>
+</template>
+<template #item="{ item }">
                             <div v-if="item.children" class="pl-4 flex flex-col gap-2">
                                 <button v-for="(child, i) in item.children" :key="i" class="text-left"
                                     @click="child.click">
@@ -54,10 +67,25 @@
                                 </button>
                             </div>
                         </template>
-                    </UAccordion>
-                    <a href="#contacts" class="bottom-header-link">Контакты</a>
-                    <a href="#blog" class="bottom-header-link">Блог</a>
-                    <a href="#faq" class="bottom-header-link">FAQ</a>
+</UAccordion> -->
+                    <NuxtLink to="/about" class="bottom-header-link">
+                        О компании
+                    </NuxtLink>
+                    <NuxtLink to="/services" class="bottom-header-link">
+                        Услуги
+                    </NuxtLink>
+                    <NuxtLink to="/portfolio" class="bottom-header-link">
+                        Портфолио
+                    </NuxtLink>
+                    <NuxtLink to="/contacts" class="bottom-header-link">
+                        Контакты
+                    </NuxtLink>
+                    <NuxtLink to="/blog" class="bottom-header-link">
+                        Блог
+                    </NuxtLink>
+                    <NuxtLink to="/faq" class="bottom-header-link">
+                        FAQ
+                    </NuxtLink>
                 </div>
             </div>
         </transition>
@@ -67,77 +95,79 @@
 
 <script setup lang="ts">
 import { IconDown, IconMenu } from '~/assets/icons';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
 const isOpen = ref(false);
 const headerRef = ref(null);
-const accordions = ref([
-    {
-        label: "О компании",
-        children: [
-            {
-                label: "История компании",
-                click: () => {
-                    document.querySelector("#history")?.scrollIntoView({ behavior: "smooth" });
-                }
-            },
-            {
-                label: "Наша команда",
-                click: () => {
-                    document.querySelector("#team")?.scrollIntoView({ behavior: "smooth" });
-                }
-            },
-            {
-                label: "Наши клиенты",
-                click: () => {
-                    document.querySelector("#clients")?.scrollIntoView({ behavior: "smooth" });
-                }
-            }
-        ]
-    }, {
-        label: "Услуги",
-        children: [{
-            label: 'Разработка бизнес-планов и ТЭО',
-            click: () => {
-                document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, {
-            label: 'Отчеты о воздействии (ЗВОС)',
-            click: () => {
-                document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, {
-            label: 'Инвестиционный консалтинг',
-            click: () => {
-                document.querySelector('#services1')?.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, {
-            label: 'Разработка ГЧП проектов',
-            click: () => {
-                document.querySelector('#services2')?.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, {
-            label: 'Бухгалтерский аутсорсинг',
-            click: () => {
-                document.querySelector('#services3')?.scrollIntoView({ behavior: 'smooth' });
-            }
-        },]
-    },
-    {
-        label: "Портфолио",
-        children: [{
-            label: 'Успешно реализованные кейсы',
-            click: () => {
-                document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, {
-            label: 'Отзывы клиентов',
-            click: () => {
-                document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
-            }
-        }]
-    }
+// const accordions = ref([
+//     {
+//         label: "О компании",
+//         children: [
+//             {
+//                 label: "История компании",
+//                 click: () => {
+//                     document.querySelector("#history")?.scrollIntoView({ behavior: "smooth" });
+//                 }
+//             },
+//             {
+//                 label: "Наша команда",
+//                 click: () => {
+//                     document.querySelector("#team")?.scrollIntoView({ behavior: "smooth" });
+//                 }
+//             },
+//             {
+//                 label: "Наши клиенты",
+//                 click: () => {
+//                     document.querySelector("#clients")?.scrollIntoView({ behavior: "smooth" });
+//                 }
+//             }
+//         ]
+//     }, {
+//         label: "Услуги",
+//         children: [{
+//             label: 'Разработка бизнес-планов и ТЭО',
+//             click: () => {
+//                 document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }, {
+//             label: 'Отчеты о воздействии (ЗВОС)',
+//             click: () => {
+//                 document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }, {
+//             label: 'Инвестиционный консалтинг',
+//             click: () => {
+//                 document.querySelector('#services1')?.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }, {
+//             label: 'Разработка ГЧП проектов',
+//             click: () => {
+//                 document.querySelector('#services2')?.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }, {
+//             label: 'Бухгалтерский аутсорсинг',
+//             click: () => {
+//                 document.querySelector('#services3')?.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         },]
+//     },
+//     {
+//         label: "Портфолио",
+//         children: [{
+//             label: 'Успешно реализованные кейсы',
+//             click: () => {
+//                 document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }, {
+//             label: 'Отзывы клиентов',
+//             click: () => {
+//                 document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }]
+//     }
 
-]);
+// ]);
 
 
 const handleClickOutside = (event: Event) => {
@@ -147,6 +177,10 @@ const handleClickOutside = (event: Event) => {
     }
 };
 
+
+watch(() => route.path, () => {
+    isOpen.value = false;
+});
 
 
 const items1 = [
@@ -196,20 +230,6 @@ const items2 = [
     },]
 ]
 
-const items3 = [
-    [{
-        label: 'Успешно реализованные кейсы',
-        click: () => {
-            document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, {
-        label: 'Отзывы клиентов',
-        click: () => {
-            document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
-
-        }
-    },]
-]
 onMounted(() => {
     document.addEventListener("click", handleClickOutside);
 });

@@ -27,16 +27,16 @@
                 </div>
                 <div class="right-side">
                     <h5>Обратная связь</h5>
-                    <form>
+                    <form @submit.prevent="sendEmail">
                         <div class="item">
                             <label for="contactName" class="form-label">Ваше имя</label>
-                            <input type="text" class="form-control" id="contactName" name="contactName" required
-                                placeholder="Введите ваше имя">
+                            <input v-model="form.name" type="text" class="form-control" id="contactName"
+                                name="contactName" required placeholder="Введите ваше имя">
                         </div>
                         <div class="item">
                             <label for="contactEmail" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="contactEmail" name="contactEmail" required
-                                placeholder="Введите ваш email">
+                            <input v-model="form.email" type="text" class="form-control" id="contactEmail"
+                                name="contactEmail" required placeholder="Введите ваш email">
                         </div>
                         <div class="item">
                             <label for="contactPhone" class="form-label">Телефон</label>
@@ -45,8 +45,8 @@
                         </div>
                         <div class="item">
                             <label for="contactMessage" class="form-label">Сообщение</label>
-                            <textarea type="text" class="form-control" id="contactMessage" name="contactMessage"
-                                required placeholder="Ваше сообщение" />
+                            <textarea v-model="form.message" type="text" class="form-control" id="contactMessage"
+                                name="contactMessage" required placeholder="Ваше сообщение" />
                         </div>
                         <button type="submit" class="btn">Отправить</button>
                     </form>
@@ -58,7 +58,29 @@
 
 <script setup lang="ts">
 import { IconFacebook, IconInstagram, IconLinkedin } from '~/assets/icons';
+import emailjs from 'emailjs-com'
 
+const form = ref({ name: '', email: '', message: '' })
+const sendEmail = () => {
+    emailjs
+        .send(
+            'service_yfu8cu5', // EmailJS'dan olganingiz
+            'template_kcfyjy3', // Template ID
+            {
+                from_name: form.value.name,
+                from_email: form.value.email,
+                message: form.value.message,
+            },
+            'XYnX5nhqGDm2rHP4F' // Public Key (EmailJS dan olasiz)
+        )
+        .then(() => {
+            alert('Xabar yuborildi!')
+        })
+        .catch((error) => {
+            console.error('Xatolik:', error)
+            alert('Xatolik yuz berdi!')
+        })
+}
 
 </script>
 
