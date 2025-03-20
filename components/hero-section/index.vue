@@ -27,7 +27,7 @@ defineProps<{ title: string, description: string }>()
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: bold;
         margin-bottom: 20px;
         text-align: center;
