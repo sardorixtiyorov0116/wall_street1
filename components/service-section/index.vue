@@ -2,33 +2,33 @@
     <div id="services" class="service">
         <div class="container">
             <h2>Услуги</h2>
-            <div class="service-box">
+            <div class="service-box" data-aos="fade-up">
                 <h3>Разработка бизнес-планов и ТЭО</h3>
                 <p>"Детализированное планирование, технико-экономическое обоснование и сопряжение
                     с Центром экспертизы."
                 </p>
                 <a href="#" class="btn">Подробнее</a>
             </div>
-            <div id="services1" class="service-box">
+            <div id="services1" class="service-box" data-aos="fade-up">
                 <h3>Отчеты о воздействии на окружающую среду (ЗВОС)</h3>
                 <p>"Подготовка комплексных отчетов с использованием современных методик и анализа
                     необходимых данных."
                 </p>
                 <a href="#" class="btn">Подробнее</a>
             </div>
-            <div id="services2" class="service-box">
+            <div id="services2" class="service-box" data-aos="fade-up">
                 <h3>Инвестиционный консалтинг</h3>
                 <p>"Сопровождение инвестиционных проектов от подготовки до запуска с минимизацией рисков."</p>
                 <a href="#" class="btn">Подробнее</a>
             </div>
-            <div id="services3" class="service-box">
+            <div id="services3" class="service-box" data-aos="fade-up">
                 <h3>Разработка ГЧП проектов</h3>
                 <p>"Организация и реализация проектов государственно-частного партнерства с учетом особенностей
                     сотрудничества."
                 </p>
                 <a href="#" class="btn">Подробнее</a>
             </div>
-            <div class="service-box">
+            <div class="service-box" data-aos="fade-up">
                 <h3>Бухгалтерский аутсорсинг</h3>
                 <p>"Полный комплекс бухгалтерских услуг, включающий ведение, восстановление учета и оптимизацию затрат
                     за счет работы профессиональной команды."

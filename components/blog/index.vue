@@ -3,7 +3,7 @@
         <div class="container">
             <h2>Блог</h2>
             <div class="row">
-                <div class="card" v-for="(blog, index) in blogs" :key="index">
+                <div class="card" v-for="(blog, index) in blogs" :key="index" data-aos="fade-up">
                     <img :src="blog.image" alt="Blog image">
                     <h3>{{ blog.title }}</h3>
                     <p>{{ blog.description }}</p>

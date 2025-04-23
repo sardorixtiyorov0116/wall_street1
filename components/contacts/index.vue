@@ -3,7 +3,7 @@
         <div class="container">
             <h2>Контакты</h2>
             <div class="row">
-                <div class="left-side">
+                <div class="left-side" data-aos="fade-right">
                     <h5>Свяжитесь с нами</h5>
                     <p>Email: info@horizonconsult.ru</p>
                     <p>Телефон: +7 (495) 123-45-67</p>
@@ -25,7 +25,7 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 </div>
-                <div class="right-side">
+                <div class="right-side" data-aos="fade-left">
                     <h5>Обратная связь</h5>
                     <form @submit.prevent="sendEmail">
                         <div class="item">

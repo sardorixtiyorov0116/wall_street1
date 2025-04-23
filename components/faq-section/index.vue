@@ -2,7 +2,7 @@
     <div id="faq" class="faq">
         <div class="container">
             <h2>Часто задаваемые вопросы (FAQ)</h2>
-            <div class="rounded-lg border border-[#dee2e6] overflow-hidden w-full">
+            <div class="rounded-lg border border-[#dee2e6] overflow-hidden w-full" data-aos="fade-up">
                 <UAccordion :items="items" :ui="{ wrapper: 'flex flex-col w-full' }">
                     <template #default="{ item, open }">
                         <UButton color="gray" variant="ghost"

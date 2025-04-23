@@ -14,9 +14,12 @@
     "emailjs-com": "^3.2.0",
     "nuxt": "^3.15.4",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "aos": "^2.3.4",
+    "nuxt-aos": "^1.2.5",
     "sass": "^1.85.0",
     "sass-loader": "^16.0.5",
     "vite-svg-loader": "^5.1.0"
