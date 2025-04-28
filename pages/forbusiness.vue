@@ -26,7 +26,7 @@
           <!-- Тел номер -->
           <div>
             <label for="phone" class="block text-sm font-medium">Тел номер (+998)</label>
-            <input id="phone" ref="phoneInput" v-model="form.phone" type="tel" v-mask="'+998 (###) ###-##-##'"
+            <input id="phone" ref="phoneInput" v-model="form.phone" type="tel" v-mask="'+998 (##) ###-##-##'"
               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required placeholder="+998"
               :class="{ 'border-red-500': !form.phone && form.submitted }" />
           </div>
