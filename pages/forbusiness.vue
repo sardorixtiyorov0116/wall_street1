@@ -11,7 +11,7 @@
     </div>
 
     <UModal v-model="isOpen">
-      <div class="p-4 bg-white text-black dark:bg-white dark:text-black">
+      <div class="p-4 bg-white text-black dark:bg-white dark:text-black rounded-lg">
         <h3 class="font-bold mb-4">Форма регистрации</h3>
         <form @submit.prevent="submitForm" class="space-y-4">
           <!-- Имя и Фамилия -->
