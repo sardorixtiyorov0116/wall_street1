@@ -37,6 +37,9 @@
                 <NuxtLink to="/faq" class="navbar-nav-link">
                     FAQ
                 </NuxtLink>
+                <NuxtLink to="/forbusiness" class="navbar-nav-link">
+                    Для бизнеса
+                </NuxtLink>
             </div>
             <div class="navbar-menu">
                 <button class="navbar-menu-btn" @click="isOpen = !isOpen">
@@ -47,27 +50,6 @@
         <transition name="slide-down">
             <div v-if="isOpen" class="container bottom-header">
                 <div class="accardions">
-                    <!-- <UAccordion :items="accordions" :ui="{ wrapper: 'flex flex-col w-auto' }">
-                        <template #default="{ item, index, open }">
-                            <UButton color="gray" variant="ghost" class="hover:!bg-inherit w-auto"
-                                :ui="{ rounded: 'rounded-none', padding: { sm: 'p-3' } }">
-                                <span class="truncate"> {{ item.label }}</span>
-                                <template #trailing>
-                                    <IconDown
-                                        class="w-5 h-5 ms-auto transform transition-transform duration-200 -rotate-90"
-                                        :class="[open && 'rotate-0']" />
-                                </template>
-</UButton>
-</template>
-<template #item="{ item }">
-                            <div v-if="item.children" class="pl-4 flex flex-col gap-2">
-                                <button v-for="(child, i) in item.children" :key="i" class="text-left"
-                                    @click="child.click">
-                                    {{ child.label }}
-                                </button>
-                            </div>
-                        </template>
-</UAccordion> -->
                     <NuxtLink to="/about" class="bottom-header-link">
                         О компании
                     </NuxtLink>
@@ -85,6 +67,9 @@
                     </NuxtLink>
                     <NuxtLink to="/faq" class="bottom-header-link">
                         FAQ
+                    </NuxtLink>
+                    <NuxtLink to="/forbusiness" class="bottom-header-link">
+                        Для бизнеса
                     </NuxtLink>
                 </div>
             </div>

@@ -2,8 +2,9 @@
     <div id="team" class="team">
         <div class="container">
             <h2>Наша команда</h2>
-            <p>Профессионалы, объединённые общей целью – помощь бизнесу и государственным структурам в реализации
-                проектов.</p>
+            <p>Наша команда – это наша главная ценность и залог успеха компании Horizont Consult. Мы объединяем
+                высококвалифицированных специалистов с профильным образованием и богатым опытом работы в своих областях.
+            </p>
             <div class="row">
                 <div class="member">
                     <img src="../../assets/images/member1.png" alt="Member 1" class="member-img">
@@ -51,6 +52,11 @@
     p {
         margin-bottom: 1.5rem;
         text-align: center;
+        font-size: 1.1rem;
+        
+        @include breakpoint(lg) {
+            width: 90%;
+        }
     }
 
     .row {

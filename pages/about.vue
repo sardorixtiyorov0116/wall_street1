@@ -3,9 +3,9 @@
         <!-- <Header /> -->
         <HeroSection :title="'О компании'"
             :description="'Эксперты в финансовом консалтинге, инвестиционных и бухгалтерских услугах.'" />
-        <HistorySection data-aos="fade-up" />
-        <TeamSection data-aos="fade-down"/>
-        <ClientSection data-aos="fade-left"/>
+        <HistorySection  />
+        <TeamSection data-aos="fade-up"/>
+        <ClientSection />
     </div>
 </template>
 

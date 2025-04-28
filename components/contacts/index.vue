@@ -5,9 +5,12 @@
             <div class="row">
                 <div class="left-side" data-aos="fade-right">
                     <h5>Свяжитесь с нами</h5>
-                    <p>Email: info@horizonconsult.ru</p>
-                    <p>Телефон: +7 (495) 123-45-67</p>
-                    <p>Адрес: Москва, ул. Примерная, 10</p>
+                    <p>Электронная почта: info@horizontconsult.uz</p>
+                    <p>Телефон: +998 952-000-952</p>
+                    <p>Адрес офиса: ул. Зульфия ханум, 22, Ташкент, Узбекистан</p>
+                    <!-- <p>Часы работы:</p>
+                    <p>Понедельник – пятница: 9:00 – 18:00</p>
+                    <p>Суббота и воскресенье: Выходной</p> -->
                     <div class="links">
                         <a href="#" class="link">
                             <IconFacebook />Facebook
