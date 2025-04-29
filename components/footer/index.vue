@@ -6,28 +6,29 @@
                     <img src="../../assets/images/Horizont_Consult_Cropped.png" alt="logo" class="h-[90px]">
                 </NuxtLink>
                 <div class="contacts">
-                    <p class="title">Contacts </p>
-                    <span class="address">123 Main St, City, State, Zip</span>
-                    <span class="phone">Phone: (123) 456-7890</span>
-                    <span class="email">Email: info@example.com</span>
+                    <p class="title">{{ t('contacts.text') }} </p>
+                    <span class="address">{{ t('contacts.address') }}</span>
+                    <span class="phone">{{ t('contacts.phone') }}: +998 952-000-952</span>
+                    <span class="email">{{ t('contacts.email') }}: info@horizontconsult.uz</span>
                 </div>
             </div>
             <div class="center">
-                <p class="title">Products </p>
+                <p class="title">{{ t('websiteSections') }} </p>
                 <div class="center-links">
                     <div class="links">
-                        <NuxtLink to="/about">About</NuxtLink>
-                        <NuxtLink to="/services">Services</NuxtLink>
-                        <NuxtLink to="/portfolio">Portfolio</NuxtLink>
+                        <NuxtLink to="/about">{{ t('about.company') }}</NuxtLink>
+                        <NuxtLink to="/services">{{ t('services.text') }}</NuxtLink>
+                        <!-- <NuxtLink to="/portfolio">Portfolio</NuxtLink> -->
+                        <div class="h-[14px]" />
                     </div>
                     <div class="links">
-                        <NuxtLink to="/contacts">Contact</NuxtLink>
-                        <NuxtLink to="/blog">Blog</NuxtLink>
-                        <NuxtLink to="/faq">FAQ</NuxtLink>
+                        <NuxtLink to="/contacts">{{ t('contacts.text') }}</NuxtLink>
+                        <!-- <NuxtLink to="/blog">Blog</NuxtLink> -->
+                        <NuxtLink to="/faq">{{ t('faq.text1') }}</NuxtLink>
                     </div>
                 </div>
             </div>
-            <div class="social-media">
+            <!-- <div class="social-media">
                 <p class="title">Socials</p>
                 <a href="#" target="_blank" rel="noopener noreferrer">
                     <IconInstagram /> Instagram
@@ -38,24 +39,24 @@
                 <a href="#" target="_blank" rel="noopener noreferrer">
                     <IconLinkedin /> Linkedin
                 </a>
-            </div>
+            </div> -->
             <div>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127476.23022063928!2d69.25036162665043!3d41.37151911911984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bdd37c0c1f1%3A0x3a5375907dcaa9d2!2sWall%20Street%20Consult!5e0!3m2!1sru!2sus!4v1740148254377!5m2!1sru!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49607.74800197167!2d69.2339923876877!3d41.318014120930755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b690e3ff7a1%3A0x5c47c0d7fa8e321b!2z0YPQuy4g0JfRg9C70YzRhNC40Y8g0YXQsNC90YPQvCAyMiwg0KLQsNGI0LrQtdC90YIsIFRhc2hrZW50LCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s!4v1745899848591!5m2!1sru!2s"
                     width="100%" height="100%" style="border:0;" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <div class="bottom">
-            <span class="title">© 2025 Horizont. All Rights Reserved.</span>
+            <span class="title">© 2025 Horizont. {{ t('allRightReserved') }}</span>
         </div>
     </footer>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { IconFacebook, IconInstagram, IconLinkedin } from '~/assets/icons';
-
-
+const { t } = useI18n()
 </script>
 
 <style scoped lang="scss">
@@ -102,7 +103,12 @@ import { IconFacebook, IconInstagram, IconLinkedin } from '~/assets/icons';
             display: none;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            // justify-content: center;
+
+            .title {
+                margin-top: 6px;
+                margin-bottom: 20px;
+            }
 
             @include breakpoint(md) {
                 display: flex;
@@ -123,7 +129,7 @@ import { IconFacebook, IconInstagram, IconLinkedin } from '~/assets/icons';
         .links {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 10px;
         }
 
         .social-media {

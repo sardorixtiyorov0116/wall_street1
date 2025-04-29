@@ -7,41 +7,63 @@
             <div class="navbar-nav">
                 <UDropdown v-if="route.path === '/about'" :items="items1" mode="hover"
                     :popper="{ placement: 'bottom-start' }">
-                    <p href="#" class="navbar-nav-link"> О компании
+                    <p href="#" class="navbar-nav-link">{{ t('about.company') }}
                         <IconDown />
                     </p>
                 </UDropdown>
                 <NuxtLink v-else to="/about" class="navbar-nav-link">
-                    О компании
+                    {{ t('about.company') }}
                     <IconDown />
                 </NuxtLink>
                 <UDropdown v-if="route.path === '/services'" :items="items2" mode="hover"
                     :popper="{ placement: 'bottom-start' }">
-                    <p href="#" class="navbar-nav-link">Услуги
+                    <p href="#" class="navbar-nav-link"> {{ t('services.text') }}
                         <IconDown />
                     </p>
                 </UDropdown>
                 <NuxtLink v-else to="/services" class="navbar-nav-link">
-                    Услуги
+                    {{ t('services.text') }}
                     <IconDown />
                 </NuxtLink>
-                <NuxtLink to="/portfolio" class="navbar-nav-link">
+                <!-- <NuxtLink to="/portfolio" class="navbar-nav-link">
                     Портфолио
-                </NuxtLink>
+                </NuxtLink> -->
                 <NuxtLink to="/contacts" class="navbar-nav-link">
-                    Контакты
+                    {{ t('contacts.text') }}
                 </NuxtLink>
-                <NuxtLink to="/blog" class="navbar-nav-link">
+                <!-- <NuxtLink to="/blog" class="navbar-nav-link">
                     Блог
-                </NuxtLink>
+                </NuxtLink> -->
                 <NuxtLink to="/faq" class="navbar-nav-link">
-                    FAQ
+                    {{ t('faq.text1') }}
                 </NuxtLink>
                 <NuxtLink to="/forbusiness" class="navbar-nav-link">
-                    Для бизнеса
+                    {{ t('forBusiness.text') }}
                 </NuxtLink>
+                <div id="language-bar" class="select" @click="toggleDropdown">
+                    <div class="selected">{{ languageName }}
+                        <IconDown />
+                    </div>
+                    <div v-if="isVisible" class="options">
+                        <div class="option" @click.stop="selectLanguage('ru')">Русский</div>
+                        <div class="option" @click.stop="selectLanguage('en')">English</div>
+                        <div class="option" @click.stop="selectLanguage('uz')">Ўзбекча</div>
+                    </div>
+                </div>
+
             </div>
+
             <div class="navbar-menu">
+                <div id="language-bar" class="select" @click="toggleDropdown">
+                    <div class="selected">{{ languageName }}
+                        <IconDown />
+                    </div>
+                    <div v-if="isVisible" class="options">
+                        <div class="option" @click.stop="selectLanguage('ru')">Русский</div>
+                        <div class="option" @click.stop="selectLanguage('en')">English</div>
+                        <div class="option" @click.stop="selectLanguage('uz')">Ўзбекча</div>
+                    </div>
+                </div>
                 <button class="navbar-menu-btn" @click="isOpen = !isOpen">
                     <IconMenu />
                 </button>
@@ -51,25 +73,25 @@
             <div v-if="isOpen" class="container bottom-header">
                 <div class="accardions">
                     <NuxtLink to="/about" class="bottom-header-link">
-                        О компании
+                        {{ t('about.company') }}
                     </NuxtLink>
                     <NuxtLink to="/services" class="bottom-header-link">
-                        Услуги
+                        {{ t('services.text') }}
                     </NuxtLink>
-                    <NuxtLink to="/portfolio" class="bottom-header-link">
+                    <!-- <NuxtLink to="/portfolio" class="bottom-header-link">
                         Портфолио
-                    </NuxtLink>
+                    </NuxtLink> -->
                     <NuxtLink to="/contacts" class="bottom-header-link">
-                        Контакты
+                        {{ t('contacts.text') }}
                     </NuxtLink>
-                    <NuxtLink to="/blog" class="bottom-header-link">
+                    <!-- <NuxtLink to="/blog" class="bottom-header-link">
                         Блог
-                    </NuxtLink>
+                    </NuxtLink> -->
                     <NuxtLink to="/faq" class="bottom-header-link">
-                        FAQ
+                        {{ t('faq.text1') }}
                     </NuxtLink>
                     <NuxtLink to="/forbusiness" class="bottom-header-link">
-                        Для бизнеса
+                        {{ t('forBusiness.text') }}
                     </NuxtLink>
                 </div>
             </div>
@@ -81,6 +103,8 @@
 <script setup lang="ts">
 import { IconDown, IconMenu } from '~/assets/icons';
 import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n'
+const { locale, t } = useI18n()
 
 const route = useRoute();
 const isOpen = ref(false);
@@ -162,58 +186,101 @@ const handleClickOutside = (event: Event) => {
     }
 };
 
+const cookies = useCookie("lang", { watch: true })
+const currentLang = ref(cookies.value ?? "ru")
+locale.value = currentLang.value
+const isVisible = ref(false);
+
+const toggleDropdown = () => {
+    isVisible.value = !isVisible.value;
+};
+
+const setLang = (lang: string) => {
+    currentLang.value = lang
+    cookies.value = lang // Store selected language in cookies
+    locale.value = lang   // Update the current language in i18n
+    isVisible.value = false // Close the dropdown after selection
+}
+
+const selectLanguage = (lang: string) => {
+    setLang(lang)
+};
+
+const languageName = computed(() => {
+    switch (currentLang.value) {
+        case 'ru':
+            return 'Русский'
+        case 'en':
+            return 'English'
+        case 'uz':
+            return 'Ўзбекча'
+        default:
+            return 'Select Language'
+    }
+})
+
+if (process.client) {
+    window.addEventListener("click", (e: Event) => {
+        const target = e.target as HTMLElement
+        if (!target.closest("#language-bar")) {
+            isVisible.value = false
+        }
+    })
+}
+
 
 watch(() => route.path, () => {
     isOpen.value = false;
 });
 
-
-const items1 = [
+const items1 = computed(() => [
     [{
-        label: 'История компании',
+        label: t('about.history.company'),
         click: () => {
             document.querySelector('#history')?.scrollIntoView({ behavior: 'smooth' });
         }
-    }, {
-        label: 'Наша команда',
-        click: () => {
-            document.querySelector('#team')?.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, {
-        label: 'Наши клиенты',
+    },
+    // {
+    //     label: t('about.team.our'),
+    //     click: () => {
+    //         document.querySelector('#team')?.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // },
+    {
+        label: t('about.clients.our'),
         click: () => {
             document.querySelector('#clients')?.scrollIntoView({ behavior: 'smooth' });
         }
     }]
-]
-const items2 = [
+])
+const items2 = computed(() => [
     [{
-        label: 'Разработка бизнес-планов и ТЭО',
+        label: t('services.1'),
         click: () => {
             document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
         }
     }, {
-        label: 'Отчеты о воздействии (ЗВОС)',
+        label: t('services.7'),
         click: () => {
             document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
         }
     }, {
-        label: 'Инвестиционный консалтинг',
+        label: t('services.17'),
         click: () => {
             document.querySelector('#services1')?.scrollIntoView({ behavior: 'smooth' });
         }
     }, {
-        label: 'Разработка ГЧП проектов',
+        label: t('services.25'),
         click: () => {
             document.querySelector('#services2')?.scrollIntoView({ behavior: 'smooth' });
         }
     }, {
-        label: 'Бухгалтерский аутсорсинг',
+        label: t('services.39'),
         click: () => {
             document.querySelector('#services3')?.scrollIntoView({ behavior: 'smooth' });
         }
     },]
-]
+])
 
 onMounted(() => {
     document.addEventListener("click", handleClickOutside);
@@ -243,6 +310,50 @@ onUnmounted(() => {
 .slide-down-leave-from {
     max-height: 300px;
     opacity: 1;
+}
+
+.select {
+    position: relative;
+    width: 85px;
+    user-select: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.selected {
+    // text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.option {
+    padding: 3px 10px;
+    transition: all 0.3s;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.option:hover {
+    background-color: var(--primary-color-hover);
+    color: var(--primary-text-color);
 }
 
 
@@ -295,6 +406,7 @@ onUnmounted(() => {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
 
             @include breakpoint(lg) {
                 display: none;

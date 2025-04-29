@@ -1,18 +1,18 @@
 <template>
     <div id="contacts" class="contacts">
         <div class="container">
-            <h2>Контакты</h2>
+            <h2 id="connect">{{ t('contacts.text') }}</h2>
             <div class="row">
                 <div class="left-side" data-aos="fade-right">
-                    <h5>Свяжитесь с нами</h5>
-                    <p>Электронная почта: info@horizontconsult.uz</p>
-                    <p>Телефон: +998 952-000-952</p>
-                    <p>Адрес офиса: ул. Зульфия ханум, 22, Ташкент, Узбекистан</p>
+                    <h5>{{ t('contacts.contactUs') }}</h5>
+                    <p>{{ t('contacts.email') }}: info@horizontconsult.uz</p>
+                    <p>{{ t('contacts.phone') }}: +998 952-000-952</p>
+                    <p>{{ t('contacts.officeAddress') }}: {{ t('contacts.address') }}</p>
                     <!-- <p>Часы работы:</p>
                     <p>Понедельник – пятница: 9:00 – 18:00</p>
                     <p>Суббота и воскресенье: Выходной</p> -->
-                    <div class="links">
-                        <a href="#" class="link">
+                    <div class="links mt-5" >
+                        <!-- <a href="#" class="link">
                             <IconFacebook />Facebook
                         </a>
                         <a href="#" class="link">
@@ -20,38 +20,37 @@
                         </a>
                         <a href="#" class="link">
                             <IconLinkedin /> LinkedIn
-                        </a>
+                        </a> -->
                     </div>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127476.23022063928!2d69.25036162665043!3d41.37151911911984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bdd37c0c1f1%3A0x3a5375907dcaa9d2!2sWall%20Street%20Consult!5e0!3m2!1sru!2sus!4v1740148254377!5m2!1sru!2sus"
-                        width="100%" height="260" style="border:0;" loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49607.74800197167!2d69.2339923876877!3d41.318014120930755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b690e3ff7a1%3A0x5c47c0d7fa8e321b!2z0YPQuy4g0JfRg9C70YzRhNC40Y8g0YXQsNC90YPQvCAyMiwg0KLQsNGI0LrQtdC90YIsIFRhc2hrZW50LCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s!4v1745899848591!5m2!1sru!2s"
+                        width="100%" height="280" style="border:0;" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
-
                 </div>
                 <div class="right-side" data-aos="fade-left">
-                    <h5>Обратная связь</h5>
+                    <h5>{{ t('contacts.feedback') }}</h5>
                     <form @submit.prevent="sendEmail">
                         <div class="item">
-                            <label for="contactName" class="form-label">Ваше имя</label>
+                            <label for="contactName" class="form-label">{{ t('contacts.yourName') }}</label>
                             <input v-model="form.name" type="text" class="form-control" id="contactName"
-                                name="contactName" required placeholder="Введите ваше имя">
+                                name="contactName" required :placeholder="t('contacts.enterYourName')">
                         </div>
                         <div class="item">
-                            <label for="contactEmail" class="form-label">Email</label>
+                            <label for="contactEmail" class="form-label">{{ t('contacts.email') }}</label>
                             <input v-model="form.email" type="text" class="form-control" id="contactEmail"
-                                name="contactEmail" required placeholder="Введите ваш email">
+                                name="contactEmail" required :placeholder="t('contacts.enterYourEmail')">
                         </div>
                         <div class="item">
-                            <label for="contactPhone" class="form-label">Телефон</label>
+                            <label for="contactPhone" class="form-label">{{ t('contacts.phone') }}</label>
                             <input type="text" class="form-control" id="contactPhone" name="contactPhone" required
-                                placeholder="Введите ваш номер телефона">
+                                :placeholder="t('contacts.enterYourPhoneNumber')">
                         </div>
                         <div class="item">
-                            <label for="contactMessage" class="form-label">Сообщение</label>
+                            <label for="contactMessage" class="form-label">{{ t('contacts.message') }}</label>
                             <textarea v-model="form.message" type="text" class="form-control" id="contactMessage"
-                                name="contactMessage" required placeholder="Ваше сообщение" />
+                                name="contactMessage" required :placeholder="t('contacts.yourMessage')" />
                         </div>
-                        <button type="submit" class="btn">Отправить</button>
+                        <button type="submit" class="btn">{{ t('contacts.send') }}</button>
                     </form>
                 </div>
             </div>
@@ -62,6 +61,8 @@
 <script setup lang="ts">
 import { IconFacebook, IconInstagram, IconLinkedin } from '~/assets/icons';
 import emailjs from 'emailjs-com'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const form = ref({ name: '', email: '', message: '' })
 const sendEmail = () => {
@@ -84,6 +85,30 @@ const sendEmail = () => {
             alert('Xatolik yuz berdi!')
         })
 }
+
+// import AOS from 'aos'
+
+onMounted(() => {
+    function updateAOS() {
+        const left = document.querySelector('.left-side')
+        const right = document.querySelector('.right-side')
+
+        if (left && right) {
+            if (window.innerWidth < 992) {
+                left.setAttribute('data-aos', 'fade-up')
+                right.setAttribute('data-aos', 'fade-up')
+            } else {
+                left.setAttribute('data-aos', 'fade-right')
+                right.setAttribute('data-aos', 'fade-left')
+            }
+
+            //   AOS.refresh()
+        }
+    }
+
+    updateAOS()
+    window.addEventListener('resize', updateAOS)
+})
 
 </script>
 

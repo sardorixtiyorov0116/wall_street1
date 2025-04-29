@@ -1,67 +1,58 @@
 <template>
   <div>
-    <HeroSection :title="'Для бизнеса'"
-      :description="'Узнайте свою финансовую устойчивость или кредитоспособность перед тем, как оформлять кредит и в других целях'" />
+    <HeroSection :title="t('forBusiness.text')" :description="t('forBusiness.1')" />
     <div class="container business">
-      <h2>Один клик — и вы уже на шаг ближе к уверенному решению.</h2>
-      <p class="text-[1.5rem]">Пройдите короткую регистрацию, и получите доступ к оценке кредитоспособности через
-        нашего Telegram-бота.</p>
-      <p class="text-[1.5rem]">Просто, быстро и бесплатно.</p>
-      <button class="btn" @click="isOpen = true">Узнать кредитоспособность</button>
+      <h2>{{ t('forBusiness.2') }}</h2>
+      <p class="text-[1.5rem]">{{ t('forBusiness.3') }}</p>
+      <p class="text-[1.5rem]">{{ t('forBusiness.4') }}</p>
+      <button class="btn" @click="isOpen = true">{{ t('forBusiness.5') }}</button>
     </div>
 
     <UModal v-model="isOpen">
       <div class="p-4 bg-white text-black dark:bg-white dark:text-black rounded-lg">
-        <h3 class="font-bold mb-4">Форма регистрации</h3>
+        <h3 class="font-bold mb-4 text-center text-[16px]">{{ t('forBusiness.form.registrationForm') }}</h3>
         <form @submit.prevent="submitForm" class="space-y-4">
-          <!-- Имя и Фамилия -->
           <div>
-            <label for="fullName" class="block text-sm font-medium">Имя и Фамилия</label>
+            <label for="fullName" class="block text-sm font-medium">{{ t('forBusiness.form.firstLastName') }}</label>
             <input id="fullName" v-model="form.fullName" type="text"
               :class="{ 'border-red-500': !form.fullName && form.submitted }"
               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required
-              placeholder="Введите имя и фамилию" />
+              :placeholder="t('forBusiness.form.enterFirstLastName')" />
           </div>
-
-          <!-- Тел номер -->
           <div>
-            <label for="phone" class="block text-sm font-medium">Тел номер (+998)</label>
+            <label for="phone" class="block text-sm font-medium">{{ t('forBusiness.form.phoneNumber') }}</label>
             <input id="phone" ref="phoneInput" v-model="form.phone" type="tel" v-mask="'+998 (##) ###-##-##'"
               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required placeholder="+998"
               :class="{ 'border-red-500': !form.phone && form.submitted }" />
           </div>
-
-          <!-- Telegram-юзернейм -->
           <div>
-            <label for="telegram" class="block text-sm font-medium">Telegram-юзернейм</label>
+            <label for="telegram" class="block text-sm font-medium">{{ t('forBusiness.form.telegramUsername') }}</label>
             <input id="telegram" v-model="form.telegram" type="text"
               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required
-              placeholder="Введите @username" :class="{ 'border-red-500': telegramInvalid && form.submitted }" />
-            <p v-if="telegramInvalid && form.submitted" class="text-red-500 text-sm mt-1">Неверный Telegram-юзернейм</p>
+              :placeholder="t('forBusiness.form.enterUsername')"
+              :class="{ 'border-red-500': telegramInvalid && form.submitted }" />
+            <p v-if="telegramInvalid && form.submitted" class="text-red-500 text-sm mt-1">{{
+              t('forBusiness.form.invalidUsername') }}</p>
           </div>
-
-          <!-- Выбор роли -->
           <div>
-            <label class="block text-sm font-medium">Выбор роли</label>
+            <label class="block text-sm font-medium">{{ t('forBusiness.form.choiceOfRole') }}</label>
             <div class="mt-2 space-y-2">
               <label class="flex items-center">
                 <input type="radio" v-model="form.role" value="Бизнесмен/финансист" required class="mr-2" />
-                Бизнесмен/финансист
+                {{ t('forBusiness.form.entrepreneur') }}
               </label>
               <label class="flex items-center">
                 <input type="radio" v-model="form.role" value="Кредитный сотрудник" required class="mr-2" />
-                Кредитный сотрудник
+                {{ t('forBusiness.form.creditSpecialist') }}
               </label>
               <label class="flex items-center">
                 <input type="radio" v-model="form.role" value="Другое" required class="mr-2" />
-                Другое
+                {{ t('forBusiness.form.other') }}
               </label>
             </div>
           </div>
-
-          <!-- Кнопка -->
           <button type="submit" class="mt-4 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-            Зарегистрироваться
+            {{ t('forBusiness.form.register') }}
           </button>
         </form>
       </div>
@@ -73,6 +64,8 @@
 import { ref } from 'vue';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const isOpen = ref(false);
 const form = ref({
@@ -85,10 +78,8 @@ const form = ref({
 const telegramInvalid = ref(false);
 
 const submitForm = () => {
-  // Telegram валидизация
   telegramInvalid.value = !form.value.telegram.includes('@');
 
-  // Проверка, что все поля заполнены
   if (!form.value.fullName || !form.value.phone || !form.value.telegram || !form.value.role) {
     form.value.submitted = true;
     return;

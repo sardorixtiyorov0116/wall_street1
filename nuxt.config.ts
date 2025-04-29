@@ -1,14 +1,24 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.ts
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
-  // compatibility: { nuxt: "3.9.0" },
-  devtools: { enabled: true },
   css: ["~/assets/scss/main.scss"],
-  modules: ["@nuxt/ui", 'nuxt-aos'],
+  devtools: { enabled: true },
+
+  modules: [
+    "@nuxt/ui",
+    "nuxt-aos",
+  ],
+  plugins: [
+    '~/plugins/i18n.js',
+  ],
+  nitro: {
+    preset: "static",
+  },
+
   vite: {
     plugins: [require("vite-svg-loader")()],
   },
+
   aos: {
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
     startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
@@ -28,4 +38,6 @@ export default defineNuxtConfig({
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
   },
+
+  compatibilityDate: "2025-04-29",
 })

@@ -3,13 +3,15 @@
         <div class="container">
             <h2>{{ title }}</h2>
             <p>{{ description }}</p>
-            <button>Заказать звонок</button>
+            <a href="/contacts#connect" class="btn">{{ t('requestCall') }}</a>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 defineProps<{ title: string, description: string }>()
+const { t } = useI18n()
 </script>
 
 <style scoped lang="scss">
@@ -39,7 +41,7 @@ defineProps<{ title: string, description: string }>()
         text-align: center;
     }
 
-    button {
+    .btn {
         background-color: var(--primary-color);
         color: var(--primary-text-color);
         padding: 6px 12px;

@@ -1,13 +1,13 @@
 <template>
     <div>
-        <HeroSection :title="'Часто задаваемые вопросы (FAQ)'"
-            :description="'Эксперты в финансовом консалтинге, инвестиционных и бухгалтерских услугах.'" />
+        <HeroSection :title="t('faq.text1')" :description="t('expertsInFinancialConsulting')" />
         <FaqSection />
     </div>
 </template>
 
 <script setup lang="ts">
-
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>
 
 <style scoped></style>
