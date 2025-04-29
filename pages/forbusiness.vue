@@ -3,7 +3,7 @@
     <HeroSection :title="t('forBusiness.text')" :description="t('forBusiness.1')" />
     <div class="container business">
       <h2>{{ t('forBusiness.2') }}</h2>
-      <p class="text-[1.5rem]">{{ t('forBusiness.3') }}</p>
+      <p class="text-[1.5rem] text-center">{{ t('forBusiness.3') }}</p>
       <p class="text-[1.5rem]">{{ t('forBusiness.4') }}</p>
       <button class="btn" @click="isOpen = true">{{ t('forBusiness.5') }}</button>
     </div>
