@@ -29,7 +29,7 @@
                 </div>
                 <div class="right-side" data-aos="fade-left">
                     <h5>{{ t('contacts.feedback') }}</h5>
-                    <form @submit.prevent="sendEmail">
+                    <form @submit.prevent>
                         <div class="item">
                             <label for="contactName" class="form-label">{{ t('contacts.yourName') }}</label>
                             <input v-model="form.name" type="text" class="form-control" id="contactName"
@@ -42,15 +42,18 @@
                         </div>
                         <div class="item">
                             <label for="contactPhone" class="form-label">{{ t('contacts.phone') }}</label>
-                            <input type="text" class="form-control" id="contactPhone" name="contactPhone" required
-                                :placeholder="t('contacts.enterYourPhoneNumber')">
+                            <input v-model="form.phone" type="text" class="form-control" id="contactPhone"
+                                name="contactPhone" required :placeholder="t('contacts.enterYourPhoneNumber')">
                         </div>
                         <div class="item">
                             <label for="contactMessage" class="form-label">{{ t('contacts.message') }}</label>
                             <textarea v-model="form.message" type="text" class="form-control" id="contactMessage"
                                 name="contactMessage" required :placeholder="t('contacts.yourMessage')" />
                         </div>
-                        <button type="submit" class="btn">{{ t('contacts.send') }}</button>
+                        <!-- <button type="submit" class="btn">{{ t('contacts.send') }}</button> -->
+                        <button type="button" class="btn" @click="handleSend">
+                            {{ t('contacts.send') }}
+                        </button>
                     </form>
                 </div>
             </div>
@@ -60,33 +63,35 @@
 
 <script setup lang="ts">
 import { IconFacebook, IconInstagram, IconLinkedin } from '~/assets/icons';
-import emailjs from 'emailjs-com'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
-const form = ref({ name: '', email: '', message: '' })
-const sendEmail = () => {
-    emailjs
-        .send(
-            'service_yfu8cu5', // EmailJS'dan olganingiz
-            'template_kcfyjy3', // Template ID
-            {
-                from_name: form.value.name,
-                from_email: form.value.email,
-                message: form.value.message,
-            },
-            'XYnX5nhqGDm2rHP4F' // Public Key (EmailJS dan olasiz)
-        )
-        .then(() => {
-            alert('Xabar yuborildi!')
-        })
-        .catch((error) => {
-            console.error('Xatolik:', error)
-            alert('Xatolik yuz berdi!')
-        })
-}
+const form = ref({ name: '', email: '', message: '', phone: '' })
+function handleSend() {
+    if (!form.value.name || !form.value.email || !form.value.phone || !form.value.message) {
+        alert(t('pleaseFill'))
+        return
+    }
 
-// import AOS from 'aos'
+    const subject = encodeURIComponent(t('contacts.feedback'))
+    const body = encodeURIComponent(
+        `${t('name')}: ${form.value.name}\n` +
+        `${t('contacts.email')}: ${form.value.email}\n` +
+        `${t('forBusiness.form.phoneNumber')}: ${form.value.phone}\n\n` +
+        `${t('contacts.message')}:\n${form.value.message}`
+    )
+
+    const mailtoUrl = `mailto:info@horizont.uz?subject=${subject}&body=${body}`
+
+    window.location.href = mailtoUrl
+
+    setTimeout(() => {
+        form.value.name = ''
+        form.value.email = ''
+        form.value.phone = ''
+        form.value.message = ''
+    }, 500)
+}
 
 onMounted(() => {
     function updateAOS() {
@@ -102,7 +107,6 @@ onMounted(() => {
                 right.setAttribute('data-aos', 'fade-left')
             }
 
-            //   AOS.refresh()
         }
     }
 
