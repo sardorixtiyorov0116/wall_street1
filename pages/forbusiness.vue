@@ -51,7 +51,7 @@
               </label>
             </div>
           </div>
-          <button type="submit" class="mt-4 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+          <button type="button"  @click="openTelegramBot" class="mt-4 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
             {{ t('forBusiness.form.register') }}
           </button>
         </form>
@@ -76,6 +76,9 @@ const form = ref({
   submitted: false
 });
 const telegramInvalid = ref(false);
+function openTelegramBot() {
+  window.open('https://t.me/moliyaviy_yordamchi_bot', '_blank')
+}
 
 const submitForm = () => {
   telegramInvalid.value = !form.value.telegram.includes('@');
