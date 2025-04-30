@@ -46,7 +46,7 @@ const items = computed(() => [{
   `
 }, {
     label: t('faq.8'),
-    content: t('faq.9')
+    content: t('faq.9', { phoneNumber: '+998 952-000-952', email: 'info@horizont.uz' })
 }, {
     label: t('faq.10'),
     content: t('faq.11')
