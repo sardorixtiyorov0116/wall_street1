@@ -5,13 +5,13 @@
             <div class="row">
                 <div class="left-side" data-aos="fade-right">
                     <h5>{{ t('contacts.contactUs') }}</h5>
-                    <p>{{ t('contacts.email') }}: info@horizontconsult.uz</p>
-                    <p>{{ t('contacts.phone') }}: +998 952-000-952</p>
+                    <p>{{ t('contacts.email') }}: <a :href="'mailto:info@horizont.uz'">info@horizont.uz</a></p>
+                    <p>{{ t('contacts.phone') }}:<a href="tel:+998952000952">+998 952-000-952</a> </p>
                     <p>{{ t('contacts.officeAddress') }}: {{ t('contacts.address') }}</p>
                     <!-- <p>Часы работы:</p>
                     <p>Понедельник – пятница: 9:00 – 18:00</p>
                     <p>Суббота и воскресенье: Выходной</p> -->
-                    <div class="links mt-5" >
+                    <div class="links mt-5">
                         <!-- <a href="#" class="link">
                             <IconFacebook />Facebook
                         </a>

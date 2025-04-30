@@ -8,8 +8,10 @@
                 <div class="contacts">
                     <p class="title">{{ t('contacts.text') }} </p>
                     <span class="address">{{ t('contacts.address') }}</span>
-                    <span class="phone">{{ t('contacts.phone') }}: +998 952-000-952</span>
-                    <span class="email">{{ t('contacts.email') }}: info@horizontconsult.uz</span>
+                    <span class="phone">{{ t('contacts.phone') }}: <a href="tel:+998952000952">+998
+                            952-000-952</a></span>
+                    <span class="email">{{ t('contacts.email') }}:  <a
+                            :href="'mailto:info@horizont.uz'">info@horizont.uz</a></span>
                 </div>
             </div>
             <div class="center">
