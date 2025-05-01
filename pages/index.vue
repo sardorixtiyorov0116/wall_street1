@@ -37,7 +37,7 @@ useHead({
         },
         {
             property: 'og:image',
-            content: `${baseUrl}/_nuxt/Horizont_Consult_Cropped.DEC2GbzX.png`
+            content: `${baseUrl}/_nuxt/HorizontConsult.Bk9kkbNx.png`
         },
         {
             property: 'og:url',
@@ -79,6 +79,7 @@ useHead({
                 <a data-aos="fade-up" href="/contacts#connect" class="btn">{{ t('requestCall') }}</a>
             </div>
         </div>
+        <img v-show="false" width="50" height="50" src="../assets/images/HorizontConsult.png" alt="">
     </div>
 </template>
 <style scoped lang="scss">
