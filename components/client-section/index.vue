@@ -17,7 +17,7 @@
             <div data-aos="fade-up"
                 class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[61%] md:h-[80px]">
                 <li>{{ t('about.clients.9') }}</li>
-                <img src="../../assets/images/ucg.png" alt="" class="w-[80px]">
+                <img src="../../assets/images/ucg123.png" alt="" class="w-[80px]">
             </div>
             <div data-aos="fade-up"
                 class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[60%] md:h-[80px]">
