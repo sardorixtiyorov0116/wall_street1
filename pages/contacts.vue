@@ -8,8 +8,9 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
+const config = useRuntimeConfig()
 
-const baseUrl = 'https://horizont.uz'
+const baseUrl = config.public.baseUrl
 const canonicalUrl = `${baseUrl}/${locale.value}/contacts`
 useHead({
     htmlAttrs: {

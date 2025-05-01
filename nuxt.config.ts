@@ -8,6 +8,11 @@ export default defineNuxtConfig({
       ]
     }
   },
+  runtimeConfig: {
+    public: {
+      baseUrl: 'https://horizont.vercel.app'
+    }
+  },
   css: ["~/assets/scss/main.scss"],
   devtools: { enabled: true },
 

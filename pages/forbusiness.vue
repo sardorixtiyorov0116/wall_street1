@@ -66,8 +66,9 @@ import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
+const config = useRuntimeConfig()
 
-const baseUrl = 'https://horizont.uz'
+const baseUrl = config.public.baseUrl
 const canonicalUrl = `${baseUrl}/${locale.value}/forbusiness`
 useHead({
     htmlAttrs: {

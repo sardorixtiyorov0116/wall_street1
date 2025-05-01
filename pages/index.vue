@@ -6,7 +6,9 @@ import { useHead, useRoute } from '#imports'
 const { t, locale } = useI18n()
 const route = useRoute()
 
-const baseUrl = 'https://horizont.uz'
+const config = useRuntimeConfig()
+
+const baseUrl = config.public.baseUrl
 const canonicalUrl = `${baseUrl}/${locale.value}${route.path === '/' ? '' : route.path}`
 
 const descriptions: any = {
@@ -24,6 +26,22 @@ useHead({
         {
             name: 'description',
             content: descriptions[locale.value]
+        },
+        {
+            property: 'og:title',
+            content: 'Horizont Consult - Konsalting va biznes yechimlari'
+        },
+        {
+            property: 'og:description',
+            content: 'Horizont Consult sizning biznesingiz uchun professional konsalting xizmatlarini taklif etadi.'
+        },
+        {
+            property: 'og:image',
+            content: `${baseUrl}/_nuxt/Horizont_Consult_Cropped.DEC2GbzX.png`
+        },
+        {
+            property: 'og:url',
+            content: canonicalUrl
         }
     ],
     link: [
