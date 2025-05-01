@@ -37,11 +37,15 @@ useHead({
         },
         {
             property: 'og:image',
-            content: `${baseUrl}/_nuxt/Horizont_Consult_Cropped.DEC2GbzX.png`
+            content: `${baseUrl}/_nuxt/HorizontConsult.png`
         },
         {
             property: 'og:url',
             content: canonicalUrl
+        },
+        {
+            property: 'og:type',
+            content: 'website'
         }
     ],
     link: [
