@@ -9,12 +9,32 @@
             <li data-aos="fade-up">{{ t('about.clients.5') }}</li>
             <p data-aos="fade-up">{{ t('about.clients.6') }}</p>
             <b data-aos="fade-up">{{ t('about.clients.7') }}</b>
-            <li data-aos="fade-up">{{ t('about.clients.8') }}</li>
-            <li data-aos="fade-up">{{ t('about.clients.9') }}</li>
-            <li data-aos="fade-up">{{ t('about.clients.10') }}</li>
-            <li data-aos="fade-up">{{ t('about.clients.11') }}</li>
+            <div data-aos="fade-up"
+                class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[60%] md:h-[80px]">
+                <li>{{ t('about.clients.8') }}</li>
+                <img src="../../assets/images/logo.d54301c.png" alt="" class="w-[50px]">
+            </div>
+            <div data-aos="fade-up"
+                class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[61%] md:h-[80px]">
+                <li>{{ t('about.clients.9') }}</li>
+                <img src="../../assets/images/ucg.png" alt="" class="w-[80px]">
+            </div>
+            <div data-aos="fade-up"
+                class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[60%] md:h-[80px]">
+                <li>{{ t('about.clients.10') }}</li>
+                <img src="../../assets/images/b-logo.png" alt="" class="w-[60px]">
+            </div>
+            <div data-aos="fade-up"
+                class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[62%] md:h-[80px]">
+                <li>{{ t('about.clients.11') }}</li>
+                <img src="../../assets/images/sport.png" alt="" class="w-[100px]">
+            </div>
+            <div data-aos="fade-up"
+                class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[60%] md:h-[80px]">
+                <li>{{ t('about.clients.13') }}</li>
+                <img src="../../assets/images/logo.d54301c.png" alt="" class="w-[50px]">
+            </div>
             <li data-aos="fade-up">{{ t('about.clients.12') }}</li>
-            <li data-aos="fade-up">{{ t('about.clients.13') }}</li>
 
             <!-- <UCarousel data-aos="fade-up" ref="carouselRef" v-slot="{ item }" :items="items" @mouseenter="isHovered = true"
                 @mouseleave="isHovered = false" :ui="{ item: 'basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 px-4' }"
@@ -78,7 +98,6 @@ onBeforeUnmount(() => {
     .container {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     h2 {

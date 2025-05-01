@@ -1,6 +1,13 @@
 // nuxt.config.ts
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      ]
+    }
+  },
   css: ["~/assets/scss/main.scss"],
   devtools: { enabled: true },
 
