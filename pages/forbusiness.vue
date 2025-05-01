@@ -65,7 +65,28 @@ import { ref } from 'vue';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t, locale } = useI18n()
+
+const baseUrl = 'https://horizont.uz'
+const canonicalUrl = `${baseUrl}/${locale.value}/forbusiness`
+useHead({
+    htmlAttrs: {
+        lang: locale.value
+    },
+    title: 'Horizont Consult',
+    meta: [
+        {
+            name: 'description',
+            content: t('expertsInFinancialConsulting')
+        }
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: canonicalUrl
+        }
+    ]
+})
 
 const isOpen = ref(false);
 const form = ref({

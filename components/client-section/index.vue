@@ -12,27 +12,27 @@
             <div data-aos="fade-up"
                 class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[60%] md:h-[80px]">
                 <li>{{ t('about.clients.8') }}</li>
-                <img src="../../assets/images/logo.d54301c.png" alt="" class="w-[50px]">
+                <img width="50" height="60.4" src="../../assets/images/logo.d54301c.png" alt="" class="w-[50px]">
             </div>
             <div data-aos="fade-up"
                 class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[61%] md:h-[80px]">
                 <li>{{ t('about.clients.9') }}</li>
-                <img src="../../assets/images/ucg123.png" alt="" class="w-[80px]">
+                <img width="80" height="40" src="../../assets/images/ucg123.png" alt="" class="w-[80px]">
             </div>
             <div data-aos="fade-up"
                 class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[60%] md:h-[80px]">
                 <li>{{ t('about.clients.10') }}</li>
-                <img src="../../assets/images/b-logo.png" alt="" class="w-[60px]">
+                <img width="60" height="60" src="../../assets/images/b-logo.png" alt="" class="w-[60px]">
             </div>
             <div data-aos="fade-up"
                 class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[62%] md:h-[80px]">
                 <li>{{ t('about.clients.11') }}</li>
-                <img src="../../assets/images/sport.png" alt="" class="w-[100px]">
+                <img width="100" height="100" src="../../assets/images/sport.png" alt="" class="w-[100px]">
             </div>
             <div data-aos="fade-up"
                 class="flex flex-wrap justify-center md:flex-nowrap md:jusify-start items-center mb-4 md:mb-0 md:gap-4  xl:w-[60%] md:h-[80px]">
                 <li>{{ t('about.clients.13') }}</li>
-                <img src="../../assets/images/logo.d54301c.png" alt="" class="w-[50px]">
+                <img width="50" height="60.4" src="../../assets/images/logo.d54301c.png" alt="" class="w-[50px]">
             </div>
             <li data-aos="fade-up">{{ t('about.clients.12') }}</li>
 

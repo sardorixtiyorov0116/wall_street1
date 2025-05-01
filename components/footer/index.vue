@@ -3,14 +3,15 @@
         <div class="container top">
             <div class="left">
                 <NuxtLink to="/">
-                    <img src="../../assets/images/Horizont_Consult_Cropped.png" alt="logo" class="h-[90px]">
+                    <img width="162.81" height="90" src="../../assets/images/Horizont_Consult_Cropped.png" alt="logo"
+                        class="h-[90px]">
                 </NuxtLink>
                 <div class="contacts">
                     <p class="title">{{ t('contacts.text') }} </p>
                     <span class="address">{{ t('contacts.address') }}</span>
                     <span class="phone">{{ t('contacts.phone') }}: <a href="tel:+998952000952">+998
                             952-000-952</a></span>
-                    <span class="email">{{ t('contacts.email') }}:  <a
+                    <span class="email">{{ t('contacts.email') }}: <a
                             :href="'mailto:info@horizont.uz'">info@horizont.uz</a></span>
                 </div>
             </div>

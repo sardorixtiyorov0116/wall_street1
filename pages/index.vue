@@ -1,3 +1,40 @@
+<script setup lang="ts">
+import ExcelUploader from '~/components/items/ExcelUploader.vue';
+import { useI18n } from 'vue-i18n'
+import { useHead, useRoute } from '#imports'
+
+const { t, locale } = useI18n()
+const route = useRoute()
+
+const baseUrl = 'https://horizont.uz'
+const canonicalUrl = `${baseUrl}/${locale.value}${route.path === '/' ? '' : route.path}`
+
+const descriptions: any = {
+    uz: "Horizont Consult - bu sizning biznesingiz uchun professional konsalting xizmatlarini taklif etuvchi ishonchli kompaniya.",
+    ru: "Horizont Consult — надежная компания, предлагающая профессиональные консалтинговые услуги для вашего бизнеса.",
+    en: "Horizont Consult is a trusted company offering professional consulting services for your business."
+}
+
+useHead({
+    htmlAttrs: {
+        lang: locale.value
+    },
+    title: 'Horizont Consult',
+    meta: [
+        {
+            name: 'description',
+            content: descriptions[locale.value]
+        }
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: canonicalUrl
+        }
+    ]
+})
+</script>
+
 <template>
     <div>
         <HeroSection :title="'Horizont Consult'" :description="t('slogan')" />
@@ -6,7 +43,6 @@
             <ExcelUploader />
         </div> -->
         <div class="container !py-20">
-            <!-- <p class="text-[2rem] text-center pb-[1.5rem]">HORIZONT CONSULT</p> -->
             <span data-aos="fade-left" class="text-[1.5rem]">{{ t('main.1') }} </span>
             <hr class="my-4" />
             <span data-aos="fade-right" class="text-[1.5rem]"> {{ t('main.2') }} </span>
@@ -23,14 +59,6 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-import ExcelUploader from '~/components/items/ExcelUploader.vue';
-
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-</script>
-
 <style scoped lang="scss">
 .btn {
     color: var(--primary-light-hover);
