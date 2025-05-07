@@ -1,28 +1,43 @@
-// nuxt.config.ts
 
 export default defineNuxtConfig({
   app: {
     head: {
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
-      ]
+      ],
     }
   },
   runtimeConfig: {
     public: {
-      baseUrl: 'https://horizont.vercel.app'
+      baseUrl: 'https://horizont.uz'
     }
   },
   css: ["~/assets/scss/main.scss"],
   devtools: { enabled: true },
-
   modules: [
     "@nuxt/ui",
     "nuxt-aos",
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'https://horizont.uz',
+    gzip: true,
+    routes: [
+      '/',
+      '/services',
+      '/contacts',
+      '/blog',
+      '/faq',
+      '/forbusiness',
+      '/about',
+      '/portfolio'
+    ]
+  },
   plugins: [
     '~/plugins/i18n.js',
+    '~/plugins/structured-data.ts'
   ],
+
   nitro: {
     preset: "static",
   },
