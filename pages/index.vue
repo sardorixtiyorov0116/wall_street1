@@ -24,6 +24,10 @@ useHead({
     title: 'Horizont Consult',
     meta: [
         {
+            name: 'google-site-verification',
+            content: '1cv5UblOQqdxoGHT8F2zhr18FuhtTbPhvhD1R9ZxXN4'
+        },
+        {
             name: 'description',
             content: descriptions[locale.value]
         },
