@@ -58,6 +58,11 @@ useHead({
     ],
     link: [
         {
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: `${baseUrl}/favicon.png`
+        },
+        {
             rel: 'canonical',
             href: canonicalUrl
         }
