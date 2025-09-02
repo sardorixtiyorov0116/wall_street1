@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="bottom">
-            <span class="title">© 2025 Horizon. {{ t('allRightReserved') }}</span>
+            <span class="title">© 2025 Horizon Consult. {{ t('allRightReserved') }}</span>
         </div>
     </footer>
 </template>

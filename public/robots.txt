@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://horizont.uz/sitemap.xml
+Sitemap: https://horizonconsult.uz/sitemap.xml
 
