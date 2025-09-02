@@ -16,7 +16,7 @@ useHead({
     htmlAttrs: {
         lang: locale.value
     },
-    title: 'Horizont Consult',
+    title: 'Horizon Consult',
     meta: [
         {
             name: 'description',

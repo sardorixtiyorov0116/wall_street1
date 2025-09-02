@@ -51,7 +51,8 @@
               </label>
             </div>
           </div>
-          <button type="button"  @click="openTelegramBot" class="mt-4 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+          <button type="button" @click="openTelegramBot"
+            class="mt-4 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
             {{ t('forBusiness.form.register') }}
           </button>
         </form>
@@ -65,28 +66,29 @@ import { ref } from 'vue';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 import { useI18n } from 'vue-i18n'
+import axios from 'axios';
 const { t, locale } = useI18n()
 const config = useRuntimeConfig()
 
 const baseUrl = config.public.baseUrl
 const canonicalUrl = `${baseUrl}/${locale.value}/forbusiness`
 useHead({
-    htmlAttrs: {
-        lang: locale.value
-    },
-    title: 'Horizont Consult',
-    meta: [
-        {
-            name: 'description',
-            content: t('expertsInFinancialConsulting')
-        }
-    ],
-    link: [
-        {
-            rel: 'canonical',
-            href: canonicalUrl
-        }
-    ]
+  htmlAttrs: {
+    lang: locale.value
+  },
+  title: 'Horizon Consult',
+  meta: [
+    {
+      name: 'description',
+      content: t('expertsInFinancialConsulting')
+    }
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: canonicalUrl
+    }
+  ]
 })
 
 const isOpen = ref(false);
@@ -99,6 +101,26 @@ const form = ref({
 });
 const telegramInvalid = ref(false);
 function openTelegramBot() {
+  axios.post(
+    'https://horizonconsult.uz/api/getinfo.php',
+    {
+      name: form.value.fullName,
+      phone: form.value.phone,
+      username: form.value.telegram,
+      role: form.value.role,
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+  )
+    .then(response => {
+      console.log('Success:', response.data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   window.open('https://t.me/moliyaviy_yordamchi_bot', '_blank')
 }
 

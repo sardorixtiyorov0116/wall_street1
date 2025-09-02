@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div class="container">
-            <h1 v-show="false">Horizont Consult – Your Partner in Business Consulting</h1>
+            <h1 v-show="false">Horizon Consult – Your Partner in Business Consulting</h1>
             <h2>{{ title }}</h2>
             <p>{{ description }}</p>
             <a href="/contacts#connect" class="btn">{{ t('requestCall') }}</a>

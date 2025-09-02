@@ -2,7 +2,7 @@
     <div class="header" ref="headerRef">
         <div class="container navbar">
             <NuxtLink to="/" class="logo">
-                <img width="144.35" height="80" src="../../assets/images/Horizont_Consult_resized_logo.png" alt="">
+                <img width="144.35" height="80" src="../../assets/images/HorizonConsultwhite.png" alt="">
             </NuxtLink>
             <div class="navbar-nav">
                 <UDropdown v-if="route.path === '/about'" :items="items1" mode="hover"

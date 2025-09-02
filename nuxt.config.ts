@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      baseUrl: 'https://horizont.uz'
+      baseUrl: 'https://horizonconsult.uz'
     }
   },
 

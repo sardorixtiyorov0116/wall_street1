@@ -3,7 +3,7 @@
         <div class="container top">
             <div class="left">
                 <NuxtLink to="/">
-                    <img width="162.81" height="90" src="../../assets/images/Horizont_Consult_Cropped.png" alt="logo"
+                    <img width="162.81" height="90" src="../../assets/images/HorizonConsult.png" alt="logo"
                         class="h-[90px]">
                 </NuxtLink>
                 <div class="contacts">
@@ -12,7 +12,7 @@
                     <span class="phone">{{ t('contacts.phone') }}: <a href="tel:+998952000952">+998
                             952-000-952</a></span>
                     <span class="email">{{ t('contacts.email') }}: <a
-                            :href="'mailto:info@horizont.uz'">info@horizont.uz</a></span>
+                            :href="'mailto:info@horizonconsult.uz'">info@horizonconsult.uz</a></span>
                 </div>
             </div>
             <div class="center">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="bottom">
-            <span class="title">© 2025 Horizont. {{ t('allRightReserved') }}</span>
+            <span class="title">© 2025 Horizon. {{ t('allRightReserved') }}</span>
         </div>
     </footer>
 </template>

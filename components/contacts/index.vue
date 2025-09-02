@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="left-side" data-aos="fade-right">
                     <h5>{{ t('contacts.contactUs') }}</h5>
-                    <p>{{ t('contacts.email') }}: <a :href="'mailto:info@horizont.uz'">info@horizont.uz</a></p>
+                    <p>{{ t('contacts.email') }}: <a :href="'mailto:info@horizonconsult.uz'">info@horizonconsult.uz</a></p>
                     <p>{{ t('contacts.phone') }}:<a href="tel:+998952000952">+998 952-000-952</a> </p>
                     <p>{{ t('contacts.officeAddress') }}: {{ t('contacts.address') }}</p>
                     <!-- <p>Часы работы:</p>
@@ -81,7 +81,7 @@ function handleSend() {
         `${t('contacts.message')}:\n${form.value.message}`
     )
 
-    const mailtoUrl = `mailto:info@horizont.uz?subject=${subject}&body=${body}`
+    const mailtoUrl = `mailto:info@horizonconsult.uz?subject=${subject}&body=${body}`
 
     window.location.href = mailtoUrl
 

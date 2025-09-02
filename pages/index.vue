@@ -12,16 +12,16 @@ const baseUrl = config.public.baseUrl
 const canonicalUrl = `${baseUrl}/${locale.value}${route.path === '/' ? '' : route.path}`
 
 const descriptions: any = {
-    uz: "Horizont Consult - bu sizning biznesingiz uchun professional konsalting xizmatlarini taklif etuvchi ishonchli kompaniya.",
-    ru: "Horizont Consult — надежная компания, предлагающая профессиональные консалтинговые услуги для вашего бизнеса.",
-    en: "Horizont Consult is a trusted company offering professional consulting services for your business."
+    uz: "Horizon Consult - bu sizning biznesingiz uchun professional konsalting xizmatlarini taklif etuvchi ishonchli kompaniya.",
+    ru: "Horizon Consult — надежная компания, предлагающая профессиональные консалтинговые услуги для вашего бизнеса.",
+    en: "Horizon Consult is a trusted company offering professional consulting services for your business."
 }
 
 useHead({
     htmlAttrs: {
         lang: locale.value
     },
-    title: 'Horizont Consult',
+    title: 'Horizon Consult',
     meta: [
         {
             name: 'google-site-verification',
@@ -33,19 +33,19 @@ useHead({
         },
         {
             name: 'keywords',
-            content: 'Horizont Consult, Konsalting, biznes xizmatlari, biznes konsalting, international consulting'
+            content: 'Horizon Consult, Konsalting, biznes xizmatlari, biznes konsalting, international consulting'
         },
         {
             property: 'og:title',
-            content: 'Horizont Consult - Konsalting va biznes yechimlari'
+            content: 'Horizon Consult - Konsalting va biznes yechimlari'
         },
         {
             property: 'og:description',
-            content: 'Horizont Consult sizning biznesingiz uchun professional konsalting xizmatlarini taklif etadi.'
+            content: 'Horizon Consult sizning biznesingiz uchun professional konsalting xizmatlarini taklif etadi.'
         },
         {
             property: 'og:image',
-            content: `${baseUrl}/_nuxt/HorizontConsult.Bk9kkbNx.png`
+            content: `${baseUrl}/_nuxt/HorizonConsult.Bk9kkbNx.png`
         },
         {
             property: 'og:url',
@@ -74,14 +74,14 @@ useHead({
             innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                "name": "Horizont Consult",
+                "name": "Horizon Consult",
                 "url": baseUrl,
-                "logo": `${baseUrl}/_nuxt/HorizontConsult.Bk9kkbNx.png`,
+                "logo": `${baseUrl}/_nuxt/HorizonConsult.Bk9kkbNx.png`,
                 "description": descriptions[locale.value],
                 "sameAs": [
-                    "https://www.facebook.com/horizontuz",
-                    "https://www.instagram.com/horizontuz",
-                    "https://www.linkedin.com/company/horizontuz"
+                    "https://www.facebook.com/horizonuz",
+                    "https://www.instagram.com/horizonuz",
+                    "https://www.linkedin.com/company/horizonuz"
                 ]
             })
         }
@@ -91,7 +91,7 @@ useHead({
 
 <template>
     <div>
-        <HeroSection :title="'Horizont Consult'" :description="t('slogan')" />
+        <HeroSection :title="'Horizon Consult'" :description="t('slogan')" />
         <!-- <div class="container">
             <h1>Excel dan ma'lumot yuklash</h1>
             <ExcelUploader />
@@ -111,7 +111,7 @@ useHead({
                 <a data-aos="fade-up" href="/contacts#connect" class="btn">{{ t('requestCall') }}</a>
             </div>
         </div>
-        <img v-show="false" width="50" height="50" src="../assets/images/HorizontConsult.png" alt="">
+        <img v-show="false" width="50" height="50" src="../assets/images/HorizonConsult.png" alt="">
     </div>
 </template>
 <style scoped lang="scss">

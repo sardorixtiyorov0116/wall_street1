@@ -9,8 +9,8 @@
   "pleaseFill": "Please fill in all fields before sending.",
   "name": "Name",
   "main": {
-    "1": "Welcome to Horizont Consult – your trusted partner in financial and environmental consulting.",
-    "2": "Horizont Consult is a leading consulting firm that assists companies and government organizations in the successful execution of investment projects.",
+    "1": "Welcome to Horizon Consult – your trusted partner in financial and environmental consulting.",
+    "2": "Horizon Consult is a leading consulting firm that assists companies and government organizations in the successful execution of investment projects.",
     "3": "Thanks to our team of experienced professionals, we provide comprehensive financial consulting solutions. Our mission is to create an environment that nurtures growth, ensures financial stability, and supports long-term development.",
     "4": "Partner with us and elevate your business to new heights!",
     "5": "Schedule a call to discover how our expertise can drive the growth and success of your business!"
@@ -19,22 +19,22 @@
     "company": "About the Company",
     "history": {
       "company": "Company History",
-      "1": "“Horizont Consult” LLC is a leading consulting firm established in 2023 by a team of seasoned professionals with extensive experience in the financial and environmental sectors. Since its inception, our mission has been to provide high-quality consulting services in finance, investment analysis, and strategic planning.",
+      "1": "“Horizon Consult” LLC is a leading consulting firm established in 2023 by a team of seasoned professionals with extensive experience in the financial and environmental sectors. Since its inception, our mission has been to provide high-quality consulting services in finance, investment analysis, and strategic planning.",
       "2": "Since our founding, we have strived to maintain transparency, reliability, and professionalism in our client relationships. Our services span various financial disciplines, including investment consulting, financial planning, and business plan development. We assist clients in optimizing financial operations, ensuring regulatory compliance, and enhancing profitability through data-driven decision-making.",
       "3": "In just two years, we have evolved from a small group of dedicated experts in financial and environmental consulting into a trusted partner for major corporations and government agencies, thanks to the successful implementation of numerous public-private partnership and investment projects across sectors such as construction, sports, and environmental management.",
       "4": "Our firm’s core strength lies in our ability to develop tailored solutions that address complex financial challenges. Whether we are supporting companies with financial restructuring, business expansion strategies, or feasibility studies for large-scale projects, we deliver actionable insights that foster sustainable growth.",
       "5": "Furthermore, we place a strong emphasis on innovation and digital transformation in finance. By leveraging advanced financial modeling techniques, data analytics, and automation tools, we help companies optimize their operations and adapt to evolving market conditions. ",
-      "6": "With a growing portfolio of more than 15 successfully completed projects, Horizont Consult continues to set industry benchmarks for excellence. Our long-term relationships with clients reflect our commitment to delivering tangible results and driving business success.",
+      "6": "With a growing portfolio of more than 15 successfully completed projects, Horizon Consult continues to set industry benchmarks for excellence. Our long-term relationships with clients reflect our commitment to delivering tangible results and driving business success.",
       "7": "Expanding our operations at the local level, we remain dedicated to supporting organizations in achieving their financial and strategic goals. Since our inception, our firm has experienced significant growth and transformation, marked by key milestones that underscore our commitment to excellence and expansion.",
       "2023": "2023 – Establishment and Expansion of Services:",
-      "8": "Horizont Consult was founded in 2023 by a team of experienced professionals in the financial and environmental sectors. Initially, the company focused on providing outsourced accounting services and financial consulting, enabling businesses to enhance their financial efficiency and ensure compliance with regulatory requirements. Recognizing the growing demand for specialized financial consulting, we expanded our service offerings to include investment consulting, assisting clients in making well-informed investment decisions. Additionally, we established a dedicated department for business plan development and feasibility studies, ensuring that enterprises can secure strategic direction and financial viability for their projects.",
+      "8": "Horizon Consult was founded in 2023 by a team of experienced professionals in the financial and environmental sectors. Initially, the company focused on providing outsourced accounting services and financial consulting, enabling businesses to enhance their financial efficiency and ensure compliance with regulatory requirements. Recognizing the growing demand for specialized financial consulting, we expanded our service offerings to include investment consulting, assisting clients in making well-informed investment decisions. Additionally, we established a dedicated department for business plan development and feasibility studies, ensuring that enterprises can secure strategic direction and financial viability for their projects.",
       "9": "Understanding the importance of sustainability and regulatory compliance, we launched environmental consulting services, including environmental impact assessments, to help businesses meet ecological and legal standards. Moreover, we created a specialized division for the development of public-private partnership (PPP) projects, fostering collaboration between government agencies and private enterprises to stimulate infrastructure and economic development.",
       "2025": "2025 – Expansion into the International Market:",
-      "10": "By 2025, Horizont Consult had established itself as a recognized leader in financial consulting on the domestic market. Building on this success, we began our expansion into the international arena, broadening our service offerings to cater to a global clientele. This strategic move is designed to leverage our expertise in finance, accounting, environmental, and sanitary consulting to support enterprises and government agencies worldwide. Our international expansion includes forging partnerships with key stakeholders, entering new markets with high growth potential, and adapting our consulting methodologies to meet diverse financial, economic, and environmental conditions."
+      "10": "By 2025, Horizon Consult had established itself as a recognized leader in financial consulting on the domestic market. Building on this success, we began our expansion into the international arena, broadening our service offerings to cater to a global clientele. This strategic move is designed to leverage our expertise in finance, accounting, environmental, and sanitary consulting to support enterprises and government agencies worldwide. Our international expansion includes forging partnerships with key stakeholders, entering new markets with high growth potential, and adapting our consulting methodologies to meet diverse financial, economic, and environmental conditions."
     },
     "team": {
       "our": "Our Team",
-      "1": "Our team is our greatest asset and the key to Horizont Consult’s success. We bring together highly qualified specialists with relevant educational backgrounds and extensive experience in their respective fields."
+      "1": "Our team is our greatest asset and the key to Horizon Consult’s success. We bring together highly qualified specialists with relevant educational backgrounds and extensive experience in their respective fields."
     },
     "clients": {
       "our": "Our Clients",
@@ -92,7 +92,7 @@
     "35": "Sports;",
     "36": "Urban infrastructure;",
     "37": "Tourism and recreation.",
-    "38": "Our experts possess a deep understanding of PPP and concession legislation, as well as practical experience in interacting with government bodies. At Horizont Consult, we bridge the gap between public vision and private investment — turning opportunities into impactful results.",
+    "38": "Our experts possess a deep understanding of PPP and concession legislation, as well as practical experience in interacting with government bodies. At Horizon Consult, we bridge the gap between public vision and private investment — turning opportunities into impactful results.",
     "39": "Accounting Outsourcing",
     "40": "We offer a full range of accounting services tailored to businesses of all sizes and industries. Our expertise ensures precise financial reporting, compliance with regulatory requirements, and cost optimization, allowing clients to focus on their core activities while we handle the complexities of accounting.",
     "41": "Our services include:",
@@ -112,8 +112,8 @@
   "faq": {
     "text1": "FAQ",
     "text": "Frequently asked questions",
-    "1": "Question 1: What services does Horizont Consult LLC provide?",
-    "2": "Horizont Consult offers a comprehensive range of consulting services, including:",
+    "1": "Question 1: What services does Horizon Consult LLC provide?",
+    "2": "Horizon Consult offers a comprehensive range of consulting services, including:",
     "3": "The development of business plans and feasibility studies;",
     "4": "The preparation of Environmental Impact Assessment (EIA) reports;",
     "5": "Investment consulting and financial advisory services;",
